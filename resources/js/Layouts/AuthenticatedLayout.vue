@@ -1,11 +1,12 @@
 <script setup>
+import { useDesign } from '../Stores/Customize'
 import Sidebar from '../Components/Dashboard/Sidebar.vue'
 import Navbar from '../Components/Dashboard/Navbar.vue'
 
 const props = defineProps({ title: String })
 </script>
 <template>
-    <n-space vertical>
+    <n-config-provider :theme-overrides="useDesign().details">
         <n-layout>
             <n-layout has-sider>
                 <Sidebar />
@@ -20,5 +21,5 @@ const props = defineProps({ title: String })
 
             </n-layout>
         </n-layout>
-    </n-space>
+    </n-config-provider>
 </template>
