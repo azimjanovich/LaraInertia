@@ -1,5 +1,5 @@
-import _ from 'lodash';
-window._ = _;
+import _ from 'lodash'
+window._ = _
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -7,10 +7,28 @@ window._ = _;
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-import axios from 'axios';
-window.axios = axios;
+import axios from 'axios'
+window.axios = axios
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+
+/**
+ * Standart vue imports
+ */
+import { h, ref, reactive, onMounted, computed } from 'vue'
+window.h = h
+window.ref = ref
+window.reactive = reactive
+window.onMounted = onMounted
+window.computed = computed
+
+/**
+ * naive-ui imports for render icon
+ */
+import { NIcon } from "naive-ui"
+window.renderIcon = (icon) => {
+    return () => h(NIcon, null, { default: () => h(icon) });
+}
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
